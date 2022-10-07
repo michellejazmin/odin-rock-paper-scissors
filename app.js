@@ -50,3 +50,21 @@ function playRound(playerSelection, computerSelection) {
 
   return result;
 }
+
+function game() {  
+  // Play 5 rounds
+  for (let i = 0; i < 5; i++) {
+    let computerSelection = getComputerChoice();
+    let playerSelection = getPlayerChoice();
+
+    console.log(`Round ${i+1}: ` + playRound(playerSelection, computerSelection));
+  }
+  
+  console.log(`Player: ${playerCounter} points\nComputer: ${computerCounter} points`);
+
+  if (playerCounter > computerCounter) console.log('You won the game!');
+  else if (playerCounter < computerCounter) console.log('You lost the game!');
+  else console.log("There are no winners");
+}
+
+game();
