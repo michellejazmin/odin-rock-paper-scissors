@@ -1,16 +1,19 @@
 let playerCounter = 0, computerCounter = 0;
 
+// Get random choice from the computer
 function getComputerChoice() {
   let options = ['rock', 'paper', 'scissors'];
   let index = Math.floor(Math.random() * 3);
   return options[index];
 }
 
+// Get input from the user
 function getPlayerChoice() {
   let playerChoice = prompt('Choose your weapon: ').toLowerCase();
   return playerChoice;
 }
 
+// Play a round
 function playRound(playerSelection, computerSelection) {
   let result;
 
@@ -51,6 +54,8 @@ function playRound(playerSelection, computerSelection) {
   return result;
 }
 
+
+// Run the game
 function game() {  
   // Play 5 rounds
   for (let i = 0; i < 5; i++) {
