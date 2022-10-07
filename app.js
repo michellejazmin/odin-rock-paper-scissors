@@ -10,3 +10,43 @@ function getPlayerChoice() {
   let playerChoice = prompt('Choose your weapon: ').toLowerCase();
   return playerChoice;
 }
+
+function playRound(playerSelection, computerSelection) {
+  let result;
+
+  if (playerSelection === computerSelection) {
+    result = "It's a tie";
+  }
+  else if (playerSelection === 'rock') {
+    if (computerSelection === 'scissors') {
+      result = 'You win! Rock beats scissors';
+      playerCounter++;
+    }
+    else {
+      result = 'You lose! Paper beats rock';
+      computerCounter++;
+    }
+  }
+  else if (playerSelection === 'paper') {
+    if (computerSelection === 'rock') {
+      result = 'You win! Paper beats rock';
+      playerCounter++;
+    }
+    else {
+      result = 'You lose! Scissors beats paper';
+      computerCounter++;
+    }
+  }
+  else if (playerSelection === 'scissors') {
+    if (computerSelection === 'paper') {
+      result = 'You win! Scissors beats paper';
+      playerCounter++;
+    }
+    else {
+      result = 'You lose! Rock beats scissors';
+      computerCounter++;
+    }
+  }
+
+  return result;
+}
