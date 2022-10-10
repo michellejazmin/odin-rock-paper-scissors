@@ -7,15 +7,14 @@ function getComputerChoice() {
   return options[index];
 }
 
-// Get input from the user
-function getPlayerChoice() {
-  let playerChoice = prompt('Choose your weapon: ').toLowerCase();
-  return playerChoice;
-}
-
 // Play a round
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection) {
   let result;
+  let computerSelection = getComputerChoice();
+  let message = document.getElementById('message');
+  let playerPoints = document.getElementById('player-points');
+  let computerPoints = document.getElementById('computer-points');
+  let winner = document.getElementById('winner');
 
   if (playerSelection === computerSelection) {
     result = "It's a tie";
@@ -51,25 +50,26 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-  return result;
-}
+  message.textContent = result;
+  playerPoints.textContent = playerCounter;
+  computerPoints.textContent = computerCounter;
 
-
-// Run the game
-function game() {  
-  // Play 5 rounds
-  for (let i = 0; i < 5; i++) {
-    let computerSelection = getComputerChoice();
-    let playerSelection = getPlayerChoice();
-
-    console.log(`Round ${i+1}: ` + playRound(playerSelection, computerSelection));
+  if (playerCounter === 5) {
+    winner.textContent = 'You won the game!';
   }
-  
-  console.log(`Player: ${playerCounter} points\nComputer: ${computerCounter} points`);
 
-  if (playerCounter > computerCounter) console.log('You won the game!');
-  else if (playerCounter < computerCounter) console.log('You lost the game!');
-  else console.log("There are no winners");
+if (computerCounter === 5) {
+    winner.textContent = 'You lost the game :(';
+  }
+
 }
 
-game();
+const rock = document.getElementById('rock');
+rock.addEventListener('click', e => playRound('rock'));
+  
+const paper = document.getElementById('paper');
+paper.addEventListener('click', e => playRound('paper'));
+  
+const scissors = document.getElementById('scissors');
+scissors.addEventListener('click', e => playRound('scissors'));
+

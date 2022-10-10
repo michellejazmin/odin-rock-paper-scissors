@@ -1,0 +1,100 @@
+:root {
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 10vh;
+  height: 100vh;
+  width: 100vw;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+#weapons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 10px;
+}
+
+button {
+  height: 100px;
+  width: 120px;
+  padding: 8px;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+#message {
+  text-align: center;
+  vertical-align: middle;
+  height: 30px;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+#result {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#winner {
+  height: 30px;
+  font-size: 2rem;
+  margin: 1rem auto;
+}
+
+#counters-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.2rem;
+}
+
+#computer-points, #player-points {
+  font-size: 2rem;
+}
